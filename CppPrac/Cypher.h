@@ -23,7 +23,7 @@ private:
     
 public:
 	Cypher(int);
-    ~Cypher();
+    virtual ~Cypher();
 	string getNewMessage();
 	string getOriginalMessage();
 	int getShiftValue();
@@ -40,7 +40,8 @@ Cypher::Cypher(int shiftValue){
 }
 
 Cypher::~Cypher(){
-    //originalMessage="";
+    originalMessage="";
+    newMessage = "";
 }
 
 string Cypher::getOriginalMessage(){

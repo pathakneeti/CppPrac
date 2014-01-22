@@ -2,25 +2,26 @@
 #include <iostream>
 
 int main(){
-    Cypher c (5);
-    Cypher * pointerToC = &c;
+    //Cypher cc (5);
+    Cypher * c = new Cypher(5);
+    //pointerToC = &c;
     string hello ("hello");
-    c.setOriginalMessage(hello);
-    cout << c.getOriginalMessage() << endl;
+    c->setOriginalMessage(hello);
+    cout << c->getOriginalMessage() << endl;
     
-    cout << c.getNewShiftedLetter('Z') << endl;
+    cout << c->getNewShiftedLetter('Z') << endl;
     
-    c.doCypher(); 
+    c->doCypher(); 
     
-    cout << c.getNewMessage() << endl;
+    cout << c->getNewMessage() << endl;
     
-    c.doCypher();
+    c->doCypher();
     
-    cout << c.getNewMessage() << endl;
+    cout << c->getNewMessage() << endl;
     
-    delete pointerToC;
+    delete c;
     
-    cout << "here is after destructor " + c.getNewMessage() << endl;
+    cout << "here is new message after destructor: " + c->getNewMessage() + " original message: " + c->getOriginalMessage() << endl;
     
     return 0;
 }

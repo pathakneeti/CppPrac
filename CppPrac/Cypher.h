@@ -40,8 +40,8 @@ Cypher::Cypher(int shiftValue){
 }
 
 Cypher::~Cypher(){
-    originalMessage="";
-    newMessage = "";
+    *(&originalMessage)="";
+    *(&newMessage) = "";
 }
 
 string Cypher::getOriginalMessage(){

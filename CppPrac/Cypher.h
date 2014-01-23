@@ -40,8 +40,12 @@ Cypher::Cypher(int shiftValue){
 }
 
 Cypher::~Cypher(){
-    *(&originalMessage)="";
-    *(&newMessage) = "";
+    for(int i=0; i<originalMessage.size(); i++){
+        this->originalMessage.at(i) = 'x';
+        this->newMessage.at(i) = 'x';
+    }
+    this->originalMessage="";
+    this->newMessage = "";
 }
 
 string Cypher::getOriginalMessage(){
